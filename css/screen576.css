@@ -1,0 +1,22 @@
+@media screen and (max-width: 576px){
+    .navlink2content1{
+        display: block;
+    }
+    .navlink2pic1{
+        text-align: center;
+    }
+    .navlink2pic1 img{
+        width: 80%;
+    }
+    .navlink2content2{
+        flex-direction: column-reverse;
+    }
+    .navlink2pic1{
+        text-align: center;
+    }
+    .navlink2pic1 img{
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+}

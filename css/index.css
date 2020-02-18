@@ -1,0 +1,635 @@
+/* *{
+  border: 1px solid red;
+} */
+html, body, .page {
+    width: 100%;
+    /* height: 100%; */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+    color: #fff;
+    overflow:hidden;
+  }
+  .wrapper{
+    display: none;
+  }
+  * {
+    font-family: 'open sans', 'lato', 'helvetica', sans-serif;
+  }
+  
+  .page {
+    position: absolute;
+  }
+  
+  #p1 {
+    left: 0px;
+  }
+  
+  #p2, #p3, #p4, #p5, #p6,#p7{
+    left: 200%;
+  }
+  
+  #p1 { background-image: url('../img/bgimg/bg_event.jpg');}
+  #p2 { background: tomato; }
+  #p3 { background: gold; }
+  #p4 { background: deeppink; }
+  #p5 { background: rebeccapurple; }
+  #p6 { background: lightgray; }
+  #p7 { background: purple; }
+  
+  #t2:target #p2,
+  #t3:target #p3,
+  #t4:target #p4,
+  #t5:target #p5,
+  #t6:target #p6,
+  #t7:target #p7 {
+    transform: translateX(-190%);
+    transition-delay: .4s !important;
+  }
+  
+  #t2:target #p1, 
+  #t3:target #p1,
+  #t4:target #p1,
+  #t5:target #p1,
+  #t6:target #p1,
+  #t7:target #p1{
+    background-color: black;
+  }
+  
+  #t2:target #p1 .icon, 
+  #t3:target #p1 .icon,
+  #t4:target #p1 .icon,
+  #t5:target #p1 .icon,
+  #t6:target #p1 .icon,
+  #t7:target #p1 .icon {
+    filter: blur(3px);
+  }
+  
+  .icon {
+    color: #fff;
+    font-size: 32px;
+    display: block;
+  }
+  
+  ul .icon:hover {
+    opacity: 0.5;
+  }
+  
+  .page .icon .title {
+    line-height: 2;
+  }
+  
+  #t2:target ul .icon,
+  #t3:target ul .icon,
+  #t4:target ul .icon,
+  #t5:target ul .icon,
+  #t6:target ul .icon,
+  #t7:target ul .icon{
+    transform: scale(.5);
+    transition-delay: .25s;
+  }
+  .menu .fa-bolt:before {
+    content: "\f0e7";
+  }
+  #t2:target #activity,
+  #t3:target #dos,
+  #t4:target #tres,
+  #t5:target #cuatro,
+  #t6:target #place,
+  #t7:target #book {
+    transform: scale(0.8) !important;
+  }
+  
+  #menu {
+    position: fixed;
+    z-index: 1;
+    top: 100px;
+    /* 多餘的 */
+    /* bottom: 0; */
+    left: 0;
+    margin: auto;
+    height: 280px;
+    width: 10%;
+    padding: 0;
+    text-align: center;
+   }
+  
+  #menu .icon {
+    margin: 30px 0;
+    transition: all .5s ease-out !important;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+/*   
+  .title, .hint {
+    display: block;
+  }
+  
+  .title {
+    font-size: 38px;
+  }
+  
+  .hint {
+    font-size: 13px;
+  }
+   */
+  #p4 .hint {
+    display: inherit !important;
+  }
+  
+  .hint a {
+    color: yellow;
+    transition: all 250ms ease-out;
+  }
+  
+  .hint a:hover {
+    color: #FFF;
+  }
+  
+  .line-trough {
+    text-decoration: line-through;
+  }
+  
+  .page#p1 .p1title{
+    transform: translateX(10%) !important;
+    width: 600px;
+    height:600px;
+    position: absolute;
+    bottom: calc(50% - 385px);
+    right: calc(45% - 300px);
+    z-index: 0;
+  }
+  .p1title img{
+    animation: wave 1s linear infinite alternate;
+    width: 100%;
+    height: 100%;
+  }
+  @keyframes wave{
+    0%{
+      transform: rotate(3deg);
+    }
+    50%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(-3deg);
+    }
+  }
+  #t2:target .page#p2 .icon,
+  #t3:target .page#p3 .icon,
+  #t4:target .page#p4 .icon,
+  #t5:target .page#p5 .icon,
+  #t6:target .page#p6 .icon,
+  #t7:target .page#p7 .icon {
+    transform: translateX(0) !important;
+    transition-delay: 1s;
+  }
+  
+  .p1title{
+    margin: 0 auto;
+  }
+
+  /* ↓以下都是Fire */
+
+  .mo-fire {
+    height: auto;
+    width: 80%;
+    position: fixed;
+    left:20%;
+    bottom: -60px;
+    z-index: 0;
+  }
+  
+  #svg-view {
+    width: 252px;
+    height: 125px;
+    left: 0px;
+  }
+  
+  .mo-fire svg {
+    width: 100%;
+    height: auto;
+    position:relative;
+    right:40px;
+  }
+  .flame {
+    animation-name: flameDisappear;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    transform-origin: 45% 45% 0;
+  }
+  .flame.one {
+    animation-delay: 1s;
+    animation-duration: 3s;
+  }
+  .flame.two{
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  
+  
+  .flame-main {
+    animation-name: flameMovement;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .flame-main.one {
+    animation-duration: 2.2s;
+    animation-delay: 1s;
+  }
+  .flame-main.two {
+    animation-duration: 2s;
+    animation-delay: 1s;
+  }
+  .flame-main.three {
+    animation-duration: 2.1s;
+    animation-delay: 3s;
+  }
+  .flame-main.four {
+    animation-duration: 3.2s;
+    animation-delay: 4s;
+  }
+  .flame-main.five {
+    animation-duration: 2.5s;
+    animation-delay: 5s;
+  }
+  @keyframes flameMovement {
+    50% {
+      transform: scale(0.98,1.0) translate(0, 2px) rotate(-1deg);
+    }
+  }
+  @keyframes flameDisappear {
+    0%{
+      transform: translate(0) rotate(180deg);
+    }
+    50% {
+       opacity: 1;
+    }
+    100% {
+      transform: translate(-10px, -40px) rotate(180deg);
+      opacity: 0;
+    }
+  }
+/* ↑以上都是火焰 */
+  .p1footer{
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+  }
+  .p2bgimg{
+    background-image: url('../img/bgimg/bgimg1.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+    /* width: 100%;
+    height: 100vh; */
+  }
+  .p3bgimg{
+    background-image: url('../img/bgimg/bgimg2.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+  }
+  .p4bgimg{
+    background-image: url('../img/bgimg/bgimg3.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+  }
+  .p5bgimg{
+    background-image: url('../img/bgimg/bgimg4.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+  }
+  .p6bgimg{
+    background-image: url('../img/bgimg/bgimg2.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+  }
+  .p7bgimg{
+    background-image: url('../img/bgimg/bgimg2.jpg')!important;
+    background-size: cover!important;
+    background-position: center;
+  }
+  .mask{
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+  }
+
+  /* P2 限時活動 的部分 */
+ .p2piccontent{
+    position: absolute;
+    left: 0%;
+    width: 90%;
+    display: flex;
+
+  }
+  .p2content{
+    padding:10px 0px;
+    width: 50%
+  }
+  .p2content:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .p2pic{
+    width:80%;
+  }
+  .p2pic img{
+    padding: 10px;
+    width: 100%;
+    transition: .5s;
+  }
+  .p2pic img:hover{
+    transform: scale(1.1);
+  }
+
+  /* P3 關於聚 的部分  */
+  .p3content{
+    position: absolute;
+    left: 0%;
+    width: 90%;
+  }
+  .introduction1{
+    display: flex;
+    margin: 20px 0;
+    padding-top: 5%;
+    justify-content: center;
+    width: 80%;
+  }
+  .introduction1pic{
+    width: 40%;
+    text-align: center;
+  }
+  .introduction1pic img{
+    width: 60%;
+  }
+  .introduction1text{
+    width: 60%;
+  }
+  .introduction1 h1{
+    font-size: 36px;
+    font-weight: 1000px;
+    color:orange;
+  }
+  .introduction1 p{
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin: 0;
+    color:black;
+    font-weight: 600;
+    font-weight: 1000px;
+  }
+  .introduction2{
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+    width: 80%;
+  }
+  .introduction2 h1{
+    font-size: 36px;
+    color:black;
+    text-align: center;
+    font-weight: 1000px;
+  }
+  .introduction2 p{
+    padding-left: 10%;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin: 0;
+    color:black;
+    font-weight: 600;
+    font-weight: 1000px;
+  }
+  .introduction2pic{
+    width: 40%;
+    text-align: right;
+  }
+  .introduction2pic img{
+    width: 80%;
+  }
+
+  /* P4 Menu的部分 */
+
+  .swiper-container {
+    padding: 50px 0px;
+    position: absolute;
+    left: 0%;
+    width: 90%;
+    height: 90vh;
+  }
+  .swiper-slide {
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+  }
+  /* P5 會員獨享 的部分 */
+  .p5content{
+    position: absolute;
+    left: 0%;
+    width: 90%;
+    height: 100vh;
+  }
+  .p5title{
+    text-align: center;
+    padding-top:50px;
+    font-size: 72px;
+    font-weight: 1000px;
+  }
+  .p5contentall{
+    display: flex;
+    padding-top:50px;
+  }
+  .p5textcontent1{
+    display: flex;
+  }
+  .p5textcontent1 h1{
+    font-size: 32px;
+    margin: 0;
+    padding: 0px 0px 0px 30px;
+    color: black;
+    text-align: left;
+    font-weight: 1000px;
+  }
+  .p5textcontent1left{
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  .p5content1title{
+    width: 300px;
+    font-weight: 1000px;
+  }
+  .p5textcontent1right{
+    text-align: left;
+    padding: 0px 30px;
+  }
+  .p5content1link ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .p5content1link li{
+    list-style: none;
+    margin: 0px 10px 0px 0px ;
+  }
+  .p5content1link a{
+    font-size: 24px;
+    font-weight: 1000px;
+  }
+  .p5content1p p{
+    font-size:24px;
+    margin: 0px;
+    text-align: justify;
+    color: black;
+    font-weight: 1000px;
+  }
+  .p5textcontent2{
+    display: flex;
+  }
+  .p5content2title{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    margin-top: 16px;
+    font-weight: 1000px;
+  }
+  .p5content2title a{
+    font-size: 32px;
+    padding: 0px 0px 0px 30px;
+    width: 300px;
+    font-weight: 1000px;
+  }
+  .p5content2p{
+    margin-top: 16px;
+  }
+  .p5content2p p{
+    font-size: 24px;
+    padding: 0px 30px;
+    color: black;
+    font-weight: 1000px;
+  }
+  .p5textcontent3{
+    display: flex;
+  }
+  .p5content3title{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    font-weight: 1000px;
+  }
+  .p5content3title a{
+    font-size: 32px;
+    padding: 0px 0px 0px 30px;
+    width: 300px;
+    font-weight: 1000px;
+  }
+  .p5content3p{
+    padding: 0px 30px;
+    font-size: 24px;
+    margin-top: 16px;
+    color: black;
+  }
+  .p5textcontent4{
+    display: flex;
+  }
+  .p5content4title{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    font-weight: 1000px;
+  }
+  .p5content4title a{
+    font-size: 32px;
+    padding: 0px 0px 0px 30px;
+  }
+  .p5content4p p{
+    font-size: 24px;
+    padding: 0px 30px;
+    margin-top: 16px;
+    color: black;
+    font-weight: 1000px;
+  }
+  .p5content5title a{
+    font-size: 32px;
+    padding: 0px 0px 0px 30px;
+    font-weight: 1000px;
+  }
+  .p5pic{
+    padding: 0px 30px;
+  }
+  .p5pic img{
+    margin: 30px 0px;
+  }
+
+  /* p6 各地聚點 的部分 */
+
+  .p6container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    left: 0%;
+    width: 90%;
+  }
+  .p6content{
+    border:3px solid gray;
+    padding: 50px;
+    margin: 50px;
+    border-radius: 10%;
+    background-color: black;
+  }
+  .p6content h2{
+    font-size: 24px;
+  }
+  #p6 a{
+    font-size: 18px;
+    width: 150px;
+  }
+  .p6content p{
+    font-size: 16px;
+    margin: 0;
+    width: 200px;
+  }
+  .p6text{
+    display: flex;
+  }
+  .p6btn{
+    display: none;
+  }
+  #modal975{
+    display: none;
+  }
+
+  /* p7 線上訂位的部分 */
+
+
+  .p7content{
+    position: absolute;
+    left: 0%;
+    width: 90%;
+  }
+  .p7content label{
+    font-size: 22px;
+  }
+  .p7container{
+    padding: 50px;
+  }
+  .p7form1content{
+    display: flex;
+  }
+  #datemobile{
+    display: none;
+}

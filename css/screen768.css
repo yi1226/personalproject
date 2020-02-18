@@ -1,0 +1,286 @@
+@media screen and (max-width: 768px){
+    #t1{
+        display: none;
+        pointer-events: none;
+    }
+    .nav{
+        width: 100%;
+        height: 80px;
+        background-color: rgb(63, 150, 204);
+        position: fixed;
+    }
+    .burger{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: rgb(73, 73, 196);
+        border-radius: 10%;
+        border: 0;
+    }
+    .topbar{
+        width: 40px;
+        height: 5px;
+        display: flex;
+        position: absolute;
+        top: 13px;
+        left: 10px;
+        background-color: white;
+    }
+    .midbar{
+        width: 40px;
+        height: 5px;
+        display: flex;
+        position: absolute;
+        top: 28px;
+        left: 10px;
+        background-color: white;
+    }
+    .btmbar{
+        width: 40px;
+        height: 5px;
+        display: flex;
+        position: absolute;
+        top: 43px;
+        left: 10px;
+        background-color: white;
+    }
+    .navlogo{
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        left: calc(50% - 40px);
+    }
+    .navlogo img{
+        width: 100%;
+        height: 100%;
+    }
+    .nav ul{
+        width: 100%;
+        list-style: none;
+        padding: 0;
+    }
+    .linktab{
+        margin: 0 auto;
+        text-align: center;
+        font-size: 48px;
+        line-height: 100px;
+        font-family: "微軟正黑體";
+    }
+    .linktab:hover{
+        color: orange;
+    }
+    .menu{
+        opacity: 0;
+        pointer-events: none;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-image: url('../img/bgimg/bg_event.jpg');
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        transition: 0.5s;
+        z-index: 10;
+    }
+    .menu.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* 限時活動 */
+    .navlink1{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);   
+        position: absolute;
+        top: 80px;
+        background-image: url('../img/bgimg/bg_event.jpg');
+    }
+    .navlink1.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink1 img{
+        width: 100%;
+        margin:5px 0px;
+    }
+
+    /* 關於"聚" */
+    .navlink2{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        background-color: wheat;
+    }
+    .navlink2.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink2content1{
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .navlink2content1 h1{
+        font-family: "標楷體";
+        color: black;
+    }
+    .navlink2content1 p{
+        display: block;
+        color: black;
+    }
+    .navlink2content2{
+        display: flex;
+        margin-top: 50px;
+    }
+    .navlink2content2 h1{
+        font-family: "標楷體";
+        color: black;
+    }
+    .navlink2content2 p{
+        display: block;
+        color: black;
+    }
+    /* 食味嚴選 */
+
+    .navlink3{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        background-color: wheat;
+    }
+    .navlink3.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink3 img{
+        width: 100%;
+        margin: 5px 0px;
+    }
+    
+    /* 會員獨享 */
+
+    .navlink4{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        background-color: wheat;
+    }
+    .navlink4.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink4 h1{
+        display: flex;
+        color: black;
+        font-size: 32px;
+    }
+    .navlink4content1{
+        margin-top: 20px;
+    }
+    .navlink4content1link ul{
+        display: flex;
+    }
+    .navlink4content1link li{
+        margin: 10px 10px 0px 50px;
+    }
+    .navlink4content1link a{
+        font-size: 28px;
+    }
+    .navlink4contentp{
+        margin-left: 50px;
+        font-size: 24px;
+        line-height: 30px;
+        color: black;
+        margin-top: 10px;
+    }
+    .navlink4content2title a{
+        font-size: 32px;
+    }
+    .navlink4content3title a{
+        font-size: 32px;
+    }
+    .navlink4content6{
+        margin: 0 auto;
+    }
+    .navlink4content6img img{
+        width: 100%;
+        margin: 5px 0px;
+    }
+
+    /* 各地聚點 */
+
+    .navlink5{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        color: white;
+        width: 100%;
+        background-image:url(../img/bgimg/bg_event.jpg);
+    }
+    .navlink5.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink5 h1{
+        margin: 20px 0px;
+    }
+    .navlink5textcontent{
+        display: flex;
+    }
+    .navlink5content{
+        border-radius: 10%;
+        background-color: black;
+        border: gray solid   3px;
+        margin: 20px;
+        height: auto;
+    }
+    .navlink5title{
+        margin: 0 5%;
+    }
+
+    /* 線上訂位 */
+
+    .navlink6{
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        color: white;
+        width: 100%;
+        background-image:url(../img/bgimg/bg_event.jpg);
+    }
+    .navlink6.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .navlink6 form{
+        margin: 20px;
+    }
+    .datemobile{
+        margin: 0px 10px;
+    }
+}

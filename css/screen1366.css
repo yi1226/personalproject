@@ -1,0 +1,207 @@
+@media screen and (max-width: 1366px) {
+    .icon {
+        color: #fff;
+        font-size:32px;
+        display: block;
+       }
+       
+    #t2:target ul .icon,
+    #t3:target ul .icon,
+    #t4:target ul .icon,
+    #t5:target ul .icon,
+    #t6:target ul .icon,
+    #t7:target ul .icon{
+        transform: scale(.5);
+        transition-delay: .25s;
+    }
+    #t2:target #activity,
+    #t3:target #dos,
+    #t4:target #tres,
+    #t5:target #cuatro,
+    #t6:target #place,
+    #t7:target #book {
+        transform: scale(0.7) !important;
+    }
+    #menu img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    #menu {
+        top: 70px;
+       }
+    #menu .icon {
+        margin: 20px 0;
+        transition: all .5s ease-out !important;
+    }
+
+    /* P1 的部分 */
+    .page#p1 .p1title{
+      width: 500px;
+      height: 500px;
+      bottom: calc(50% - 300px);
+      right: calc(45% - 250px);
+    }
+    /* P2　的部分 */
+    .p2piccontent{
+        display: flex;
+    }
+    .p2content{
+        width:50%;
+        height: 100vh;
+    }
+    .p2pic{
+        width: 80%;
+      }
+    /* P3 的部分 */
+    
+    .p3content{
+        height: 100vh;
+    }
+    .introduction1{
+        width: 100%;
+        height: 50%;
+    }
+    .introduction1pic{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+    }
+    .introduction1pic img{
+        padding: 0 5%;
+        width: 80%;
+        height: 100%;
+    }
+    .introduction1text{
+        padding-right: 10%;
+    }
+    .introduction1 h1{
+        font-size: 24px;
+    }
+    .introduction1 p{
+        font-size: 12px;
+    }
+    .introduction2{
+        width: 100%;
+        height: 50%;
+    }
+    .introduction2 h1{
+        font-size: 28px;
+    }
+    .introduction2 p{
+        font-size: 12px;
+    }
+    .introduction2pic{
+      text-align: left;
+    }
+    .introduction2pic img{
+        width: 80%;
+    }
+    .introduction2text{
+        padding: 0px 5%;
+    }
+
+    /* p5 的部分  */
+
+    .p5title{
+        font-size: 28px;
+      }
+      .p5contentall{
+        padding:0;
+      }
+      .p5textcontent1 h1{
+        font-size: 20px;
+      }
+      .p5textcontent1left{
+        width: 200px;
+      }
+      .p5content1title{
+        width: 200px;
+      }
+      .p5content1link a{
+        font-size: 18px;
+      }
+      .p5content1p p{
+        font-size:18px;
+      }
+      .p5content2title{
+        width: 200px;
+      }
+      .p5content2title a{
+        font-size: 20px;
+        width: 200px;
+      }
+      .p5content2p p{
+        font-size: 18px;
+      }
+      .p5content3title{
+        width: 200px;
+      }
+      .p5content3title a{
+        font-size: 20px;
+        width: 200px;
+      }
+      .p5content3p{
+        font-size: 18px;
+      }
+      .p5content4title{
+        width: 200px;
+      }
+      .p5content4title a{
+        font-size: 20px;
+        width: 200px;
+      }
+      .p5content4p p{
+        font-size: 18px;
+      }
+      .p5content5title{
+        width: 200px;
+      }
+      .p5content5title a{
+        font-size: 20px;
+        width: 200px;
+      }
+
+    /* p6 的部分 */
+
+    .p6container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .p6leftbox{
+        width: 33%;
+    }
+    .p6midbox{
+        width: 34%;
+    }
+    .p6rightbox{
+        width: 33%;
+    }
+    .p6content{
+        margin: 30px;
+        padding: 30px;
+        transition: 1s;
+    }
+    .p6content h2{
+        font-size: 18px;
+        margin: 0;
+    }
+    .p6content a{
+        font-size: 16px;
+    }
+    .p6content p{
+        font-size: 14px;
+    }
+    .p6text{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .p6textL{
+        padding: 0px;
+      }
+      .p6textR{
+        padding: 0px;
+      }
+}   

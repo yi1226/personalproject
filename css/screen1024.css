@@ -1,0 +1,57 @@
+@media screen and (max-width: 1024px){
+
+/* P1部分 */
+
+.page#p1 .p1title{
+    width: 400px;
+    height: 400px;
+    bottom: calc(50% - 300px);
+    right: calc(45% - 180px);
+  }
+/* ---------- */
+  /* 面試用 */
+  .icon {
+    font-size: 22px;
+  }
+  #menu .icon {
+    margin: 20px 0;
+    transition: all .5s ease-out !important;
+  }
+  /* P2限時活動的部分 */
+  .p2content{
+    padding:30px 0px;
+    width: 50%
+  }
+  /* P4菜單 */
+  #p4 img{
+      height: 500px;
+      width: 400px;
+  }
+  /* P7線上訂位的部分 */
+  #webdatepicker{
+      display: none;
+  }
+  #datemobile{
+      display: flex;
+  }
+  /* ----------- */
+/* p5  的部分 */
+
+.p5contentall{
+    display: block;
+}
+.p5pic{
+    display: flex;
+}
+.p5pic img{
+    width: 80%;
+  }
+
+  /* p6--- */
+  .p6leftbox .p6content{
+    border:3px solid gray;
+    padding: 10px;
+    margin: 20px;
+  }
+  /* --- */
+}
